@@ -1,0 +1,21 @@
+<% layout('layouts/template') %>
+<h1 class="text-center" id="catHeader">
+   New Category
+</h1>
+<br>
+<div class="col-6 offset-3">
+   <form action="/menu/index" method="POST">
+        <div class="col-6 mb-3">
+           <label class="form-label" for="category" id="category">
+               Category
+           </label>
+           <input class="form-control" id="category" 
+                  type="text" name="category" required>
+        </div>
+        <div class="mb-3">
+           <button class="btn" id="addcat" type="sumbit">
+               Add Category
+           </button>
+        </div>
+   </form>
+</div>

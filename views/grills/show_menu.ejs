@@ -1,0 +1,37 @@
+<% layout('layouts/template') %>
+
+<div class="d-flex justify-content-center">
+   <div class="p-4">
+       <a href="/menu/<%=category._id%>/dish/create" 
+          class="btn" id="dishlink"> 
+          Add Dish   
+       </a>
+   </div>
+   <div class="p-4">
+       <h2 id="catHeader">   
+          <%=category.category%>
+       </h2>  
+   </div>
+</div>
+<div class="row row-cols-1 row-cols-md-4 g-4 mb-3 p-5">
+    <% for (let dish of menu) {%>
+    <div class="col">
+        
+       <div class="card" style="width: 18rem;">
+            <img src="https://media.istockphoto.com/photos/hamburger-french-fries-and-beer-picture-id1224393397?b=1&k=20&m=1224393397&s=170667a&w=0&h=t-HA_trAmIFrVFc1k1jR1a-UaGQovBEVFuj9n-wdgaI=" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+               <h3>
+                  <%=dish.nameFood%>
+               </h3>
+               <p>
+                 <%=dish.priceFood%>
+               </p>
+               <p>
+                 <%=dish.details%>
+               </p>
+            </div>
+        </div>
+    </div> 
+    <%}%>             
+    
+</div>

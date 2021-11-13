@@ -1,0 +1,65 @@
+<% layout('layouts/template') %>
+
+<div class="d-flex ">
+   <div class="row row-cols-1 row-cols-md-4 g-4 mb-3 p-5">
+       <% for (menu of menus) { %>
+<div class="card mb-3" style="width: 15rem;">
+  <div class="card-body">
+    
+    <h4><%=menu.nameFood%></h4>
+    <h3><%=menu.priceFood%></h3>
+    <input class="form-control" id="quantity" type="number" 
+           min="1" max="99" value="1" name="quantity">
+    <br>   
+    <div class="d-flex justify-content-around">
+       <button class="btn btn-primary" type="submit">
+            Add
+       </button>
+       <button class="btn btn-danger" type="submit">
+            Delete
+       </button>
+    </div>
+    
+  </div>
+</div>
+<% } %>
+   </div>
+
+   <div class="p-2">
+
+   <br>
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Net Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    </tr> 
+  </tbody>
+  <tr>
+      <td>Total Price</td>
+      <td></td>
+    </tr>
+</table>
+ <br>
+<form action="/menu/order/index" method="POST">
+
+    <input class="form-control" id="food" name="food" value="" type="hidden">
+    <input class="form-control" id="prilist" name="prilist" value="" type="hidden">
+    <input class="form-control" id="quanlist" name="quanlist" value="" type="hidden">
+    <input class="form-control" id="amount" name="amount" value="" type="hidden">
+    <input class="form-control" id="total" name="total" value="" type="hidden">
+    <button class="btn btn-primary" id="purchase" 
+            type="submit" >
+        Purchase
+   </button>
+</form>
+
+   </div>
+</div>
+ 

@@ -1,0 +1,47 @@
+<% layout('layouts/template') %>
+
+<h1 class="text-center" id="dishHead">
+   New Dish
+</h1>
+<br>
+<div class="col-6 offset-3">
+   <form action="/menu/<%=category._id%>/dish/index" method="POST">
+        <div class="col-6 mb-3">
+           <label class="form-label" for="category" id="category">
+               Category
+           </label>
+           <select class="form-select" id="category" name="category" 
+                   aria-label="Default select example">
+               <option><%=category.category%></option>
+          </select>
+        </div>
+        <div class="col-6 mb-3">
+           <label class="form-label" for="nameFood" id="nameFood">
+               Name Food
+           </label>
+           <input class="form-control" id="nameFood" 
+                  type="text" name="nameFood" required>
+        </div>
+        <div class="col-6 mb-3">
+           <label class="form-label" for="priceFood" id="priceFood">
+               Price Food
+           </label>
+           <input class="form-control" id="priceFood" 
+                  type="text" name="priceFood" required>
+        </div>
+        <div class="col-6 mb-3">
+           <label class="form-label" for="details" id="details">
+               Details
+           </label>
+           <div class="form-floating">
+           <textarea class="form-control" id="details" name="details" 
+                     placeholder="Leave a comment here" ></textarea>
+        </div>
+        <br>
+        <div class="mb-3">
+           <button class="btn" id="adddish" type="sumbit">
+               Add Dish
+           </button>
+        </div>
+   </form>
+</div>
